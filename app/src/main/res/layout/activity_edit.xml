@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <EditText
+            android:id="@+id/editDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:inputType="date"
+            >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/editTextTransactionAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editDate"
+            android:layout_below="@+id/editDate"
+            android:ems="10"
+            android:inputType="numberDecimal"
+             />
+
+        <EditText
+            android:id="@+id/editTextTransactionCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editDate"
+            android:layout_below="@+id/editTextTransactionAmount"
+            android:ems="10"
+            android:inputType="text"
+             />
+        <EditText
+            android:id="@+id/editTextExchangeAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editDate"
+            android:layout_below="@+id/editTextTransactionCurrency"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            />
+        <EditText
+            android:id="@+id/editTextExchangeCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editDate"
+            android:layout_below="@+id/editTextExchangeAmount"
+            android:ems="10"
+            android:inputType="text"
+            />
+
+        <TextView
+            android:id="@+id/textViewCDATE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/editDate"
+            android:layout_toRightOf="@+id/editDate"
+            android:layout_alignParentLeft="true"
+            android:text="@string/CDATE"
+             />
+
+        <TextView
+            android:id="@+id/textViewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/editTextTransactionAmount"
+            android:layout_alignBottom="@+id/editTextTransactionAmount"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="@string/TRANSACTION_AMOUNT" />
+
+        <TextView
+            android:id="@+id/textViewTransactionCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/editTextTransactionCurrency"
+            android:layout_alignBottom="@+id/editTextTransactionCurrency"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="@string/TRANSACTION_CURRENCY" />
+
+        <TextView
+            android:id="@+id/textViewExhangeAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/editTextExchangeAmount"
+            android:layout_alignBottom="@+id/editTextExchangeAmount"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="@string/EXCHANGE_AMOUNT" />
+        <TextView
+            android:id="@+id/textViewExhangeCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/editTextExchangeCurrency"
+            android:layout_alignBottom="@+id/editTextExchangeCurrency"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="@string/EXCHANGE_CURRENCY" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:padding="@dimen/activity_vertical_margin"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:onClick="run"
+            android:text="@string/save"
+             />
+
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="28dp"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/activity_vertical_margin"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="@string/delete"
+                />
+
+            <Button
+                android:id="@+id/editButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/activity_vertical_margin"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="@string/edit"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

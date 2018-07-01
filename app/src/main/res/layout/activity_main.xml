@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="false"
+    tools:context="com.sample.foo.sqliteexample.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="72dp"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="100dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:background="@color/colorPrimary"
+            android:contentDescription="sda"
+            android:src="@mipmap/ic_addbutton" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="440dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/UsedTotalTRY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/totalGold"
+            android:layout_toRightOf="@+id/totalGold"
+            android:text="Spend TRY" />
+
+        <TextView
+            android:id="@+id/EarnedTotalTRY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/totalGold"
+            android:layout_alignBottom="@+id/totalGold"
+            android:layout_toEndOf="@+id/totalGold"
+            android:layout_toRightOf="@+id/totalGold"
+            android:text="Earned TRY" />
+
+        <TextView
+            android:id="@+id/totalTry"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_toEndOf="@+id/totalUsdHead"
+            android:layout_toRightOf="@+id/totalUsdHead"
+            android:text="122000" />
+
+        <TextView
+            android:id="@+id/totalTry3"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_toEndOf="@+id/EarnedTotalTRY"
+            android:layout_toRightOf="@+id/EarnedTotalTRY"
+            android:text="122000" />
+
+        <TextView
+            android:id="@+id/totalTry4"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/totalTry3"
+            android:layout_alignStart="@+id/totalTry3"
+            android:layout_below="@+id/totalTry3"
+            android:text="122000" />
+
+        <TextView
+            android:id="@+id/totalTryHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TRY" />
+
+        <TextView
+            android:id="@+id/totalUsd"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/totalTry"
+            android:layout_alignStart="@+id/totalTry"
+            android:layout_below="@+id/totalEuroHead"
+            android:text="122000" />
+
+        <TextView
+            android:id="@+id/totalUsdHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/totalTryHead"
+            android:text="USD" />
+
+        <TextView
+            android:id="@+id/totalEuroHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/totalTry"
+            android:layout_toRightOf="@+id/totalTry"
+            android:text="EUR" />
+
+        <TextView
+            android:id="@+id/totalEuro"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_toEndOf="@+id/totalGoldHead"
+            android:layout_toRightOf="@+id/totalGoldHead"
+            android:text="122000" />
+
+        <TextView
+            android:id="@+id/totalGold"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/totalEuro"
+            android:layout_alignStart="@+id/totalEuro"
+            android:layout_below="@+id/totalEuro"
+            android:text="122000" />
+
+        <TextView
+            android:id="@+id/totalGoldHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalEuroHead"
+            android:layout_toEndOf="@+id/totalTry"
+            android:layout_toRightOf="@+id/totalTry"
+            android:text="GLD" />
+
+        <TextView
+            android:id="@+id/currentCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/totalUsd"
+            android:text="Current Currency" />
+
+        <TextView
+            android:id="@+id/currentCurrencyValue"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/currentCurrency"
+            android:layout_alignBottom="@+id/currentCurrency"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/totalUsd"
+            android:layout_toRightOf="@+id/totalUsd"
+            android:text="4.5886" />
+
+        <TextView
+            android:id="@+id/Profit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/currentCurrencyValue"
+            android:layout_toEndOf="@+id/totalGold"
+            android:layout_toRightOf="@+id/totalGold"
+            android:text="Profit" />
+
+        <TextView
+            android:id="@+id/ProfitValue"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/Profit"
+            android:layout_alignBottom="@+id/Profit"
+            android:layout_alignLeft="@+id/totalTry4"
+            android:layout_alignStart="@+id/totalTry4"
+            android:text="5000" />
+
+
+        <!--<ImageButton-->
+        <!--android:id="@+id/src"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/button"-->
+        <!--android:text="Ekle" />-->
+
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>
