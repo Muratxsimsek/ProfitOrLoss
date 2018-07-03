@@ -35,9 +35,9 @@
             android:inputType="numberDecimal"
              />
 
-        <EditText
-            android:id="@+id/editTextTransactionCurrency"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/spinnerTransactionCurrency"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/editDate"
             android:layout_below="@+id/editTextTransactionAmount"
@@ -49,13 +49,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/editDate"
-            android:layout_below="@+id/editTextTransactionCurrency"
+            android:layout_below="@+id/spinnerTransactionCurrency"
             android:ems="10"
             android:inputType="numberDecimal"
             />
-        <EditText
-            android:id="@+id/editTextExchangeCurrency"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/spinnerExchangeCurrency"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/editDate"
             android:layout_below="@+id/editTextExchangeAmount"
@@ -87,8 +87,8 @@
             android:id="@+id/textViewTransactionCurrency"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/editTextTransactionCurrency"
-            android:layout_alignBottom="@+id/editTextTransactionCurrency"
+            android:layout_alignBaseline="@+id/spinnerTransactionCurrency"
+            android:layout_alignBottom="@+id/spinnerTransactionCurrency"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:text="@string/TRANSACTION_CURRENCY" />
@@ -106,8 +106,8 @@
             android:id="@+id/textViewExhangeCurrency"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/editTextExchangeCurrency"
-            android:layout_alignBottom="@+id/editTextExchangeCurrency"
+            android:layout_alignBaseline="@+id/spinnerExchangeCurrency"
+            android:layout_alignBottom="@+id/spinnerExchangeCurrency"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:text="@string/EXCHANGE_CURRENCY" />

@@ -41,6 +41,18 @@ public class ExampleDBHelper extends SQLiteOpenHelper {
                         ")"
 
         );
+
+        db.execSQL(
+                "CREATE TABLE IF NOT EXISTS PRESENT_CURRENCY" +
+                        "(" +
+                        "_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        "CDATE TEXT," +
+                        "USD_TL REAL," +
+                        "EUR_TL REAL," +
+                        "GLD_TL REAL" +
+                        ")"
+
+        );
     }
 
     @Override

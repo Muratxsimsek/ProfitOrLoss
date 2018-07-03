@@ -8,9 +8,11 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 
@@ -20,9 +22,9 @@ public class CreateOrEditActivity extends AppCompatActivity implements View.OnCl
     private ExampleDBHelper dbHelper ;
     EditText dateEditText;
     EditText transactionAmountEditText;
-    EditText transactionCurrencyEditText;
+    Spinner transactionCurrencySpinner;
     EditText exchangeAmountEditText;
-    EditText exchangeCurrencyEditText;
+    Spinner exchangeCurrencySpinner;
 
     Button saveButton;
     LinearLayout buttonLayout;
@@ -40,9 +42,15 @@ public class CreateOrEditActivity extends AppCompatActivity implements View.OnCl
 
         dateEditText = (EditText) findViewById(R.id.editDate);
         transactionAmountEditText = (EditText) findViewById(R.id.editTextTransactionAmount);
-        transactionCurrencyEditText = (EditText) findViewById(R.id.editTextTransactionCurrency);
+        transactionCurrencySpinner = (Spinner) findViewById(R.id.spinnerTransactionCurrency);
         exchangeAmountEditText = (EditText) findViewById(R.id.editTextExchangeAmount);
-        exchangeCurrencyEditText = (EditText) findViewById(R.id.editTextExchangeCurrency);
+        exchangeCurrencySpinner = (Spinner) findViewById(R.id.spinnerExchangeCurrency);
+
+        ArrayAdapter<String> adapterCurrency = new ArrayAdapter<String>(CreateOrEditActivity.this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.currency));
+        adapterCurrency.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        transactionCurrencySpinner.setAdapter(adapterCurrency);
+
+        exchangeCurrencySpinner.setAdapter(adapterCurrency);
 
         saveButton = (Button) findViewById(R.id.saveButton);
         saveButton.setOnClickListener(this);
@@ -142,9 +150,9 @@ public class CreateOrEditActivity extends AppCompatActivity implements View.OnCl
 //        }
 //        else {
             if(dbHelper.insertTransaction(Integer.parseInt(transactionAmountEditText.getText().toString()),
-                    transactionCurrencyEditText.getText().toString(),
+                    transactionCurrencySpinner.getSelectedItem().toString(),
                     Integer.parseInt(exchangeAmountEditText.getText().toString()),
-                    exchangeCurrencyEditText.getText().toString()
+                    exchangeCurrencySpinner.getSelectedItem().toString()
                     )) {
                 Toast.makeText(getApplicationContext(), "Transaction Inserted", Toast.LENGTH_SHORT).show();
             }
