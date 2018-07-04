@@ -34,9 +34,9 @@ public class ExampleDBHelper extends SQLiteOpenHelper {
                         "(" +
                             "_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                             "CDATE TEXT," +
-                            "TRANSACTION_AMOUNT INTEGER," +
+                            "TRANSACTION_AMOUNT REAL," +
                             "TRANSACTION_CURRENCY TEXT," +
-                            "EXCHANGE_AMOUNT INTEGER," +
+                            "EXCHANGE_AMOUNT REAL," +
                             "EXCHANGE_CURRENCY TEXT" +
                         ")"
 
@@ -61,7 +61,7 @@ public class ExampleDBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertTransaction(Integer transactionAmount, String transactionCurrency, Integer exchangeAmount, String exchangeCurrency) {
+    public boolean insertTransaction(Double transactionAmount, String transactionCurrency, Double exchangeAmount, String exchangeCurrency) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -85,27 +85,28 @@ public class ExampleDBHelper extends SQLiteOpenHelper {
 //        return numRows;
 //    }
 
-    public boolean updatePerson(Integer id, String name, String gender, int age) {
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        ContentValues contentValues = new ContentValues();
-//        contentValues.put(PERSON_COLUMN_NAME, name);
-//        contentValues.put(PERSON_COLUMN_GENDER, gender);
-//        contentValues.put(PERSON_COLUMN_AGE, age);
-//        db.update(PERSON_TABLE_NAME, contentValues, PERSON_COLUMN_ID + " = ? ", new String[] { Integer.toString(id) } );
+    public boolean updateTransaction(Integer id, String cdate, Double transactionAmount, String transactionCurrency,Double exchangeAmount,String exchangeCurrency) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("CDATE", cdate);
+        contentValues.put("TRANSACTION_AMOUNT", transactionAmount);
+        contentValues.put("TRANSACTION_CURRENCY", transactionCurrency);
+        contentValues.put("EXCHANGE_AMOUNT", exchangeAmount);
+        contentValues.put("EXCHANGE_CURRENCY", exchangeCurrency);
+        db.update("EX_TRANSACTION", contentValues, "_id = ? ", new String[] { Integer.toString(id) } );
         return true;
     }
 
-    public Integer deletePerson(Integer id) {
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        return db.delete(PERSON_TABLE_NAME,
-//                PERSON_COLUMN_ID + " = ? ",
-//                new String[] { Integer.toString(id) });
-        return 0;
+    public Integer deleteTransaction(Integer id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("EX_TRANSACTION",
+                "_id = ? ",
+                new String[] { Integer.toString(id) });
     }
 
     public Cursor getTransaction(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery("SELECT * FROM EX_TRANSACTION  WHERE EX_TRANSACTION_ID = ?", new String[]{Integer.toString(id)});
+        Cursor res =  db.rawQuery("SELECT * FROM EX_TRANSACTION  WHERE _id = ?", new String[]{Integer.toString(id)});
         return res;
     }
 
@@ -113,5 +114,49 @@ public class ExampleDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "SELECT * FROM EX_TRANSACTION", null );
         return res;
+    }
+
+    public Cursor getCurrencies() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery("SELECT * FROM PRESENT_CURRENCY", new String[]{});
+        return res;
+    }
+
+    public void updateCurrencies(Double usd,Double eur,Double gld) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor =  db.rawQuery("SELECT * FROM PRESENT_CURRENCY", new String[]{});
+        SQLiteDatabase dbWritable = this.getWritableDatabase();
+        cursor.moveToFirst();
+
+        if(cursor.getCount() > 0){
+
+            ContentValues contentValues = new ContentValues();
+
+            DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+            String date = df.format(new Date().getTime());
+
+            contentValues.put("CDATE", date);
+            contentValues.put("USD_TL", usd);
+            contentValues.put("EUR_TL", eur);
+            contentValues.put("GLD_TL", gld);
+
+            dbWritable.update("PRESENT_CURRENCY", contentValues, "_id = ?", new String[] { Integer.toString(cursor.getInt(cursor.getColumnIndex("_id"))) } );
+        }
+        else{
+
+            ContentValues contentValues = new ContentValues();
+
+
+            DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+            String date = df.format(new Date().getTime());
+
+            contentValues.put("CDATE", date);
+            contentValues.put("USD_TL", usd);
+            contentValues.put("EUR_TL", eur);
+            contentValues.put("GLD_TL", gld);
+
+            dbWritable.insert("PRESENT_CURRENCY", null, contentValues);
+        }
     }
 }

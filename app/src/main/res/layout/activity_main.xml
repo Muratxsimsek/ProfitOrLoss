@@ -52,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:text="@string/TL"
+                    android:text="@string/TRY"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -61,7 +61,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
 
             </TableRow>
 
@@ -85,7 +87,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
             </TableRow>
 
             <TableRow
@@ -108,7 +112,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
             </TableRow>
 
             <TableRow
@@ -131,7 +137,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textSize="168sp"
+                    android:textStyle="bold"/>
             </TableRow>
 
         </TableLayout>
@@ -140,7 +148,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp">
+        android:layout_height="280dp">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -188,7 +196,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
             </TableRow>
             <TableRow
@@ -201,7 +211,12 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textAllCaps="true"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    />
 
             </TableRow>
             <TableRow
@@ -225,7 +240,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
             </TableRow>
             <TableRow
@@ -249,7 +266,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
             </TableRow>
             <TableRow
@@ -273,7 +292,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
             </TableRow>
         </TableLayout>
